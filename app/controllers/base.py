@@ -11,7 +11,7 @@ class BaseController:
         try:
             return cls.manager.get_by_id(_id), None
         except (SQLAlchemyError, RuntimeError) as ex:
-            return None, str(ex)
+        return None, str(ex)
 
     @classmethod
     def get_all(cls) -> Tuple[Any, Optional[str]]:
